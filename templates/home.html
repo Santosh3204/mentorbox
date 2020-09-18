@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qzzo</title>
+
+    <style>
+        body {
+            background-color: darkorange;
+            margin-top: 100px;
+        }
+
+
+    </style>
+</head>
+
+
+<body>
+<center>
+
+    <h1>Qzzo Technologies Private Limited</h1>
+
+
+    {% block content %}
+
+    <table>
+        <tr>
+            <td>
+                <a href="{% url 'login_page' %}"><button>Login</button></a>
+            </td>
+            
+            <td>
+                <a href="{% url 'signup_page' %}"><button>Sign Up</button></a>
+            </td>
+        </tr>
+    </table>
+</center>
+    
+</body>
+
+{% endblock %}
+</html>

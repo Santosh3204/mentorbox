@@ -1,0 +1,103 @@
+{% extends "home.html" %}
+    {% block content %}
+
+    <style>
+
+        .register {
+            background-color: cornflowerblue;
+            color: black;
+            width: 30%;
+            
+        }
+
+    </style>
+    <center>
+    <div class="register">
+    <form action="{% url "signup" %}" method="POST" name="login_form">
+        {% csrf_token %}
+
+        <center>
+            <h1>Signup</h1>
+
+            <table>
+            <tr>
+                <td>Image</td>
+                <td><input type="file" value="" name="image" placeholder="image"></td>
+                
+            </tr>
+
+            <tr>
+               <td>First Name</td>
+                <td><input type="text" value="" name="first_name" oninput="First();"></td>
+                <td id="message"></td>
+            </tr>
+
+            <tr>
+            <td>Last Name</td>
+            <td>    <input type="text" value="" name="last_name" placeholder="">            </td>
+
+            </tr>        
+            
+            <tr>
+            <td>Age</td>
+            <td>   <input type="number" value="" name="age" placeholder="">
+            </td>
+            </tr>
+
+            <tr>
+                <td>Unique ID</td>
+                 <td><input type="text" value="" name="unique_id" placeholder="optional"></td>
+             </tr>
+
+            
+             <tr>
+                <td>Email ID</td>
+                <td><input type="email" value="" name="email_id" placeholder=""></td>
+            </tr>
+
+
+            <tr>
+            <td>Password :</td>
+            <td><input type="password" value="" name="password" placeholder=""></td>
+            </tr>
+
+            <tr>
+            <td>Conform Password :</td>
+            <td><input type="password" value="" name="conform_password" placeholder=""></td>
+            </tr>
+            
+            <tr>
+            <td></td>
+            <td>
+            <input type="submit" value="SignUp" name="account_signup"><br>
+            </td>
+            </tr>
+
+        </table>
+        </center>
+    </form>
+    
+<div>
+    <center>
+        <br>
+        Already have an account, <a href="{% url "login_page" %}">Login</a> here
+        <br><br>
+
+    </center>
+</div>
+
+</div>
+
+<div>
+    {% for message in messages %}
+        <h3>
+            Note : {{message}}
+        </h3>
+    {% endfor %}
+</div>
+</center>
+
+
+{% endblock %}
+
+

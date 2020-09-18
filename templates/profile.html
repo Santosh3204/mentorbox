@@ -1,0 +1,70 @@
+{% extends "home.html" %}
+
+    
+{% block content %}
+
+<style>
+    table, td, th {
+        border: 1px solid black;
+        }
+        
+    table {
+    border-collapse: collapse;
+    width: 50%;
+    }
+    
+    th {
+    height: 50px;
+    }
+    td {
+        width: 25%;
+    }
+    
+</style>
+    <center><h1>{{text}}</h1></center>
+
+    <center>
+    <table>
+
+        <tr>
+            <td>Image</td>
+            <td>{{user.image}}</td>
+        </tr>
+
+
+    <tr>
+        <th>Fields</th>
+        <th>Info</th>
+    </tr>
+
+    <tr>
+        <td>First Name</td>
+        <td>{{user.first_name}}</td>
+    </tr>
+
+    <tr>
+        <td>Last Name</td>
+        <td>{{user.last_name}}</td>
+    </tr>
+
+    <tr>
+        <td>Age</td>
+        <td>{{user.age}}</td>
+    </tr>
+
+    <tr>
+        <td>Unique ID</td>
+        <td>{{user.unique_id}}</td>
+    </tr>
+
+    <tr>
+        <td>Email ID</td>
+        <td>{{user.email_id}}</td>
+    </tr>
+    </table>
+    <br>
+</center>
+{% endblock %}
+    
+
+</html>

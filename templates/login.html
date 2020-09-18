@@ -1,0 +1,78 @@
+{% extends 'home.html' %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC IT Solutions</title>
+</head>
+
+{% block content %}
+{% load static %}
+<style>
+ 
+    
+
+    .login {
+        background-color: cornflowerblue;
+        color: black;
+        width: 30%;
+    }
+   
+
+</style>
+
+    <body>
+    <center>
+    <div class="login">
+        <h1>Login</h1>
+        <form action="{% url "login" %}" method="POST">
+
+            
+            {% csrf_token %}
+
+            <table>
+        <tr>
+            <td>
+                Enter your Email ID:
+            </td>
+            <td>
+                <input type="email" value="" name="email_id"><br>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+            Enter your password:
+            </td>
+            <td>
+            <input type="password" value="" name="password"><br>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+            <input type="submit" value="Login" name="login_account">
+            </td>
+        </tr>
+
+            </table>
+        </form>
+            <br>
+            Don't have an account, <a href="{% url "signup_page" %}">Signup</a> here<br>
+            <br>
+        </center>
+    </div>
+    <br>
+    {% for message in messages %}
+            <h3>
+                Note : {{message}}
+            </h3>
+    {% endfor %}
+</body>
+<br>
+{% endblock %}
+</html>
