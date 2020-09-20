@@ -1,0 +1,27 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+
+<style>
+    .message {
+        color: forestgreen;
+    }
+</style>
+
+
+<center>
+
+    <div class="message">
+    <h2>Successfully Logged Out</h2>
+    </div>
+
+    <br><br>
+
+    Click here to <a href="{% url 'login_page' %}">Login Again</a>
+
+</center>
+
+
+
+{% endblock %}

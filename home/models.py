@@ -4,16 +4,23 @@ from django.db import models
 
 
 class Accounts(models.Model):
-    image = models.ImageField(upload_to='media/')
-    first_name = models.CharField(max_length=20)
-    last_name = models.CharField(max_length=20)
-    age = models.PositiveIntegerField()
-    unique_id = models.CharField(max_length=20)
+    user_name = models.CharField(max_length=20, null=True)
+    college_name = models.CharField(max_length=100, null=True)
+    degree = models.CharField(max_length=100, null=True)
+    passout_year = models.PositiveIntegerField(null=True)
     email_id = models.EmailField()
     password = models.CharField(max_length=20)
+    school_name = models.CharField(max_length=100, null=True)
+    age = models.PositiveIntegerField(null=True)
+    course = models.CharField(max_length=100, null=True)
 
     def __str__(self):
-        return self.first_name
+        return self.email_id
 
         
+
+
+
+
+
 

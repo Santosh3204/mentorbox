@@ -18,7 +18,7 @@ from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
 
-from home.views import home, login_page, signup_page, login, signup, user_home_page
+from home.views import home, login_page, signup_page, login, signup, user_home_page, update, logout_user
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,7 +27,9 @@ urlpatterns = [
     path('signup/', signup_page, name="signup_page"),
     path('user_login/', login, name="login"),
     path('user_signup', signup, name="signup"),
-    path('user_home_page', user_home_page, name="user_home_page"),
+    path('user_home_page/<int:id>', user_home_page, name="user_home_page"),
+    path('update_profile/<int:id>/', update, name="update"),
+    path('logout/', logout_user, name="logout"),
 
 ]
 

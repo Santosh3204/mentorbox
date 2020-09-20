@@ -4,8 +4,15 @@
 {% block content %}
 
 <style>
+
+
+    
+
     table, td, th {
         border: 1px solid black;
+        color: black;
+        width: 30%;
+        background-color: cornflowerblue;
         }
         
     table {
@@ -24,12 +31,9 @@
     <center><h1>{{text}}</h1></center>
 
     <center>
-    <table>
 
-        <tr>
-            <td>Image</td>
-            <td>{{user.image}}</td>
-        </tr>
+    
+    <table>
 
 
     <tr>
@@ -37,32 +41,56 @@
         <th>Info</th>
     </tr>
 
-    <tr>
-        <td>First Name</td>
-        <td>{{user.first_name}}</td>
-    </tr>
 
     <tr>
-        <td>Last Name</td>
-        <td>{{user.last_name}}</td>
-    </tr>
-
-    <tr>
-        <td>Age</td>
-        <td>{{user.age}}</td>
-    </tr>
-
-    <tr>
-        <td>Unique ID</td>
-        <td>{{user.unique_id}}</td>
+        <td>Username</td>
+        <td>{{user.user_name}}</td>
     </tr>
 
     <tr>
         <td>Email ID</td>
         <td>{{user.email_id}}</td>
     </tr>
+
+    <tr>
+        <td>College Name</td>
+        <td>{{user.college_name}}</td>
+    </tr>
+
+    <tr>
+        <td>Degree</td>
+        <td>{{user.degree}}</td>
+    </tr>
+
+    <tr>
+        <td>Passout year</td>
+        <td>{{user.passout_year}}</td>
+    </tr>
+
+    <tr>
+        <td>Course</td>
+        <td>{{user.course}}</td>
+    </tr>
+
+    <tr>
+        <td>School Name</td>
+        <td>{{user.school_name}}</td>
+    </tr>
+
+    <tr>
+        <td>Age</td>
+        <td>{{user.age}}</td>
+    </tr>
     </table>
+
     <br>
+    <tr>
+        <td></td>
+        <td><a href="{% url 'logout' %}"><button>Logout</button></a></td>
+    </tr>
+    <br>
+
+    
 </center>
 {% endblock %}
     

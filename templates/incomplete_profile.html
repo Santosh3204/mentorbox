@@ -1,0 +1,102 @@
+{% extends 'home.html' %}
+
+
+{% block content %}
+
+<style>
+
+    .register {
+        background-color: cornflowerblue;
+        color: black;
+        width: 30%;
+        
+    }
+
+</style>
+<center>
+
+<form action="{% url "update" user.id %}" method="POST" name="update_form">
+    {% csrf_token %}
+
+    <center>
+        <h1>Update Profile</h1>
+
+        <table>
+
+
+            <tr>
+                <td>Email :</td>
+                <td>{{user.email_id}}</td>
+            </tr>
+        
+         <tr>
+            <td>UserName :</td>
+            <td><input type="text" value="" name="username" placeholder=""></td>
+        </tr>
+
+
+        <tr>
+        <td>College Name :</td>
+        <td><input type="text" value="" name="college_name" placeholder=""></td>
+        </tr>
+
+        <tr>
+        <td>Degree :</td>
+        <td><input type="text" value="" name="degree" placeholder=""></td>
+        </tr>
+        
+        <tr>
+            <td>Passout Year :</td>
+            <td><input type="number" value="" name="passout_year" placeholder=""></td>
+        </tr>
+
+        <tr>
+            <td>Course :</td>
+            <td><input type="text" value="" name="course" placeholder=""></td>
+        </tr>
+
+        <tr>
+            <td>School Name</td>
+            <td><input type="text" value="" name="school_name" placeholder=""></td>
+        </tr>
+
+        <tr>
+            <td>Age :</td>
+            <td><input type="number" value="" name="age" placeholder=""></td>
+        </tr>
+        <tr>
+        <td></td>
+        <td>
+        <input type="submit" value="Update" name="account_update"><br>
+        </td>
+        </tr>
+
+    </table>
+    </center>
+</form>
+
+<div>
+<center>
+    <br>
+    Already have an account, <a href="{% url "login_page" %}">Login</a> here
+    <br><br>
+
+</center>
+</div>
+
+</div>
+
+<div>
+{% for message in messages %}
+    <h3>
+        Note : {{message}}
+    </h3>
+{% endfor %}
+
+</center>
+
+
+
+
+
+{% endblock %}
